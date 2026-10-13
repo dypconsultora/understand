@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Understand Studio — Diseño y producción de stands</title>
+  <meta name="description" content="Diseño y producción de stands, eventos, locales comerciales y oficinas a medida. Servicio integral llave en mano: diseño, desarrollo, producción y montaje. Buenos Aires, Argentina.">
+  <meta name="theme-color" content="#1b1c1f">
+  <meta property="og:title" content="Understand Studio — Diseño que conecta">
+  <meta property="og:description" content="Diseñamos experiencias únicas que reflejan tu identidad. Stands, eventos, locales y oficinas a medida.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://understandstudio.com.ar/">
+  <meta property="og:image" content="https://understandstudio.com.ar/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null, l = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('understand-theme'); l = localStorage.getItem('understand-lang'); } catch (e) {}
+      d.dataset.theme = t === 'light' ? 'light' : 'dark';
+      // Idioma: elección guardada o idioma del navegador (español → ES, cualquier otro → EN)
+      if (l !== 'es' && l !== 'en') {
+        var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'es'];
+        l = String(langs[0] || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+      }
+      d.lang = l;
+      if (l === 'en') d.classList.add('i18n-pending');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- ============ SVG SPRITE (íconos de trazo fino) ============ -->
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+    <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
+    <symbol id="i-arrow-d" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7.5 8 5.5 8-5.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 4h3l1.8 4.6-2.2 1.4a10.5 10.5 0 0 0 5.9 5.9l1.4-2.2 4.6 1.8v3a2 2 0 0 1-2.1 2A15.5 15.5 0 0 1 3.5 6.1 2 2 0 0 1 5.5 4Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/><path d="M9 8.3c0 3.2 2.6 6.2 6.1 6.6l1.1-1.4-2-1-.9.8a4.6 4.6 0 0 1-2.4-2.4l.8-.9-1-2L9 8.3Z"/></symbol>
+    <symbol id="i-wa-fill" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V16M8 7.8v.01M12 16v-3.3a2 2 0 0 1 4 0V16M12 10.5V16"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14.5 8H16V4.5h-2.3A3.7 3.7 0 0 0 10 8.2V10.5H8V14h2v7h3.5v-7h2.3l.5-3.5h-2.8V8.6c0-.3.3-.6.6-.6h.4Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7v.01"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c.7 5.3 4.7 9.3 10 10-5.3.7-9.3 4.7-10 10-.7-5.3-4.7-9.3-10-10 5.3-.7 9.3-4.7 10-10Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1Z"/></symbol>
+  </svg>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__panels"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="loader__brand">
+      <span class="logo logo--xl" role="img" aria-label="understand studio"><span class="logo__mark"></span><span class="logo__dot"></span></span>
+    </div>
+    <p class="loader__step mono"><span class="loader__num" id="loader-num">01</span><span class="loader__dash"></span><span class="loader__word"><span id="loader-word">Diseño</span></span></p>
+  </div>
+
+  <!-- ============ GRANO ============ -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV · PÍLDORA DE VIDRIO ============ -->
+  <header class="nav" id="nav">
+    <nav class="nav__pill" aria-label="Navegación principal">
+      <a href="#top" class="nav__logo" data-scroll-link aria-label="Understand Studio — inicio">
+        <span class="logo" aria-hidden="true"><span class="logo__mark"></span><span class="logo__dot"></span></span>
+      </a>
+      <div class="nav__links">
+        <span class="nav__indicator" aria-hidden="true"></span>
+        <a href="#estudio" data-scroll-link data-nav="estudio">Estudio</a>
+        <a href="#servicios" data-scroll-link data-nav="servicios">Servicios</a>
+        <a href="#proyectos" data-scroll-link data-nav="proyectos">Proyectos</a>
+        <a href="#proceso" data-scroll-link data-nav="proceso">Proceso</a>
+      </div>
+      <div class="lang nav__lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" lang="es">ES</button><button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Activar modo día" title="Modo día / noche">
+        <svg class="i i--moon"><use href="#i-moon"/></svg>
+        <svg class="i i--sun"><use href="#i-sun"/></svg>
+      </button>
+      <a href="#contacto" class="btn btn--primary btn--sm nav__cta magnetic" data-scroll-link>
+        <span class="btn__label">Contacto</span>
+        <span class="btn__icon"><svg class="i"><use href="#i-arrow-ur"/></svg><svg class="i i--next"><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+      <span class="nav__progress" aria-hidden="true"><span id="nav-progress"></span></span>
+    </nav>
+  </header>
+
+  <!-- ============ MENÚ MOBILE ============ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__inner">
+      <p class="eyebrow mono">Menú</p>
+      <ul class="menu__list">
+        <li><a href="#estudio" data-scroll-link><span class="mono">01</span><span class="menu__label">Estudio</span></a></li>
+        <li><a href="#servicios" data-scroll-link><span class="mono">02</span><span class="menu__label">Servicios</span></a></li>
+        <li><a href="#proyectos" data-scroll-link><span class="mono">03</span><span class="menu__label">Proyectos</span></a></li>
+        <li><a href="#proceso" data-scroll-link><span class="mono">04</span><span class="menu__label">Proceso</span></a></li>
+        <li><a href="#contacto" data-scroll-link><span class="mono">05</span><span class="menu__label">Contacto</span></a></li>
+      </ul>
+      <div class="lang menu__lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" lang="es">Español</button><button type="button" data-lang="en" lang="en">English</button>
+      </div>
+      <div class="menu__foot">
+        <a href="mailto:hola@understandstudio.com.ar">hola@understandstudio.com.ar</a>
+        <a href="tel:+5492229511390">+54 9 2229 51-1390</a>
+        <a href="https://wa.me/5491164562950" target="_blank" rel="noopener">WhatsApp +54 9 11 6456-2950</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX DE PROYECTOS ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Proyecto" aria-hidden="true">
+    <div class="lightbox__bg"></div>
+    <figure class="lightbox__fig">
+      <img class="lightbox__img" id="lb-img" src="" alt="">
+      <figcaption class="lightbox__cap">
+        <span class="mono t-acc" id="lb-num">01</span>
+        <span class="lightbox__name" id="lb-name"></span>
+        <span class="mono t-dim" id="lb-ev"></span>
+      </figcaption>
+    </figure>
+    <div class="lightbox__ui">
+      <button class="lightbox__btn magnetic" type="button" id="lb-prev" aria-label="Proyecto anterior"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+      <button class="lightbox__btn magnetic" type="button" id="lb-next" aria-label="Proyecto siguiente"><svg class="i"><use href="#i-arrow-r"/></svg></button>
+      <button class="lightbox__btn lightbox__close magnetic" type="button" id="lb-close" aria-label="Cerrar"><svg class="i"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ============ BOTONES FLOTANTES ============ -->
+  <button class="fab fab--top" type="button" data-to-top aria-label="Volver arriba"><svg class="i"><use href="#i-arrow-d"/></svg></button>
+  <a class="fab fab--wa" href="https://wa.me/5491164562950" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg class="i i--fill"><use href="#i-wa-fill"/></svg></a>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="main">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="top">
+          <div class="hero__bg" aria-hidden="true">
+            <div class="hero__grid"></div>
+            <svg class="hero__plan" id="plan" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"></svg>
+            <div class="hero__glow"></div>
+            <div class="hero__glow hero__glow--2"></div>
+          </div>
+
+          <div class="wrap hero__inner">
+            <h1 class="hero__title" id="hero-title">Diseño que <em>conecta</em></h1>
+
+            <div class="hero__row">
+              <p class="hero__sub">Diseñamos experiencias únicas que reflejan tu identidad. Stands, eventos, locales y oficinas a medida, <b>llave en mano</b>.</p>
+              <div class="hero__ctas">
+                <a href="#contacto" class="btn btn--primary magnetic" data-scroll-link>
+                  <span class="btn__label">Hablemos de tu proyecto</span>
+                  <span class="btn__icon"><svg class="i"><use href="#i-arrow-ur"/></svg><svg class="i i--next"><use href="#i-arrow-ur"/></svg></span>
+                </a>
+                <a href="#proyectos" class="btn btn--ghost magnetic" data-scroll-link>
+                  <span class="btn__label">Ver proyectos</span>
+                  <span class="btn__icon"><svg class="i"><use href="#i-arrow-ur"/></svg><svg class="i i--next"><use href="#i-arrow-ur"/></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Escenario: proyectos reales en secuencia -->
+          <div class="hero__stage wrap">
+            <div class="stage-tilt" id="stage-tilt">
+              <div class="badge" aria-hidden="true">
+                <svg viewBox="0 0 200 200">
+                  <defs><path id="badge-path" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs>
+                  <g class="badge__rot"><text><textPath href="#badge-path" textLength="496" lengthAdjust="spacing">DISEÑO · DESARROLLO · PRODUCCIÓN · MONTAJE · </textPath></text></g>
+                  <circle class="badge__ring" cx="100" cy="100" r="50"/>
+                  <circle class="badge__dot" cx="100" cy="100" r="14"/>
+                </svg>
+              </div>
+              <div class="bezel stage" id="stage">
+                <div class="bezel__core stage__core">
+                  <div class="stage__slides" id="stage-slides">
+                    <figure class="slide is-on" data-name="CEA" data-ev="Expo Transporte · 2026"><img src="assets/img/p/cea-transporte.webp" alt="Stand de CEA en Expo Transporte 2026" fetchpriority="high"></figure>
+                    <figure class="slide" data-name="Shiden" data-ev="AGS · 2025"><img src="assets/img/p/shiden.webp" alt="Stand de Shiden en AGS 2025" loading="lazy"></figure>
+                    <figure class="slide" data-name="Pauna" data-ev="FITHEP · 2024"><img src="assets/img/p/pauna.webp" alt="Stand de Pauna en FITHEP 2024" loading="lazy"></figure>
+                    <figure class="slide" data-name="Megevand" data-ev="BATEV · 2026"><img src="assets/img/p/megevand.webp" alt="Stand de Megevand en BATEV 2026" loading="lazy"></figure>
+                    <figure class="slide" data-name="CEA" data-ev="Automechanik · 2026"><img src="assets/img/p/cea-automechanik.webp" alt="Stand de CEA en Automechanik 2026" loading="lazy"></figure>
+                    <figure class="slide" data-name="Gotter" data-ev="FIMAQH · 2023"><img src="assets/img/p/gotter.webp" alt="Stand de Gotter en FIMAQH 2023" loading="lazy"></figure>
+                  </div>
+                  <div class="stage__shade" aria-hidden="true"></div>
+                  <div class="stage__hud mono" aria-hidden="true">
+                    <span class="stage__corner stage__corner--tl"></span><span class="stage__corner stage__corner--tr"></span>
+                    <span class="stage__corner stage__corner--bl"></span><span class="stage__corner stage__corner--br"></span>
+                    <div class="stage__top">
+                      <span><i class="rec"></i>Proyecto <b id="stage-num">01</b><span class="t-dim">/06</span></span>
+                      <span class="t-dim">understand studio</span>
+                    </div>
+                    <div class="stage__bottom">
+                      <div class="stage__info">
+                        <span class="stage__name" id="stage-name">CEA</span>
+                        <span class="stage__ev" id="stage-ev">Expo Transporte · 2026</span>
+                      </div>
+                      <div class="stage__dashes" id="stage-dashes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wrap">
+            <dl class="stats">
+              <div class="stat"><dt class="mono">Proyectos</dt><dd><span data-count="19">0</span></dd><p>En nuestro portfolio</p></div>
+              <div class="stat"><dt class="mono">Ferias y eventos</dt><dd><span data-count="16">0</span></dd><p>Hotelga · BATEV · Expo Golosinas y más</p></div>
+              <div class="stat"><dt class="mono">Trayectoria</dt><dd><span data-count="2018" data-from="2000">2000</span></dd><p>Desde INYM en Ganadera 2018</p></div>
+              <div class="stat"><dt class="mono">Llave en mano</dt><dd><span data-count="4">0</span></dd><p>Diseño · Desarrollo · Producción · Montaje</p></div>
+            </dl>
+          </div>
+        </section>
+
+        <!-- ================= MARCAS / MARQUEE ================= -->
+        <section class="stack" id="marcas" aria-label="Marcas y ferias">
+          <div class="wrap stack__head">
+            <span class="eyebrow mono" data-scramble>Marcas y ferias</span>
+            <p class="stack__platforms">Algunas de las <b>marcas</b> y <b>ferias</b> de nuestro portfolio</p>
+          </div>
+          <div class="marquee" data-dir="1">
+            <div class="marquee__inner">
+              <span>Opella</span><i><span class="mdot"></span></i><span class="o">Marmicoc</span><i><span class="mdot"></span></i><span>CEA</span><i><span class="mdot"></span></i><span class="o">Jorgito</span><i><span class="mdot"></span></i><span>Megevand</span><i><span class="mdot"></span></i><span class="o">Calier</span><i><span class="mdot"></span></i><span>Herralum</span><i><span class="mdot"></span></i><span class="o">Shiden</span><i><span class="mdot"></span></i><span>Stock de Carnes</span><i><span class="mdot"></span></i><span class="o">Kinetical</span><i><span class="mdot"></span></i><span>Etilfarma</span><i><span class="mdot"></span></i><span class="o">Leistung</span><i><span class="mdot"></span></i><span>Gotter</span><i><span class="mdot"></span></i><span class="o">Carol</span><i><span class="mdot"></span></i><span>Antequera</span><i><span class="mdot"></span></i><span class="o">Pauna</span><i><span class="mdot"></span></i><span>Unical</span><i><span class="mdot"></span></i><span class="o">INYM</span><i><span class="mdot"></span></i>
+            </div>
+          </div>
+          <div class="marquee marquee--sm" data-dir="-1">
+            <div class="marquee__inner">
+              <span class="o">Expo Transporte</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>Expo Golosinas</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">BATEV</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>Automechanik</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">Avícola</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>AGS</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">Hotelga</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>Expodent</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">ETIF</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>Expo Medical</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">FIMAQH</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>Presentes</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">FITHEP</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span>Exposing</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i><span class="o">Ganadera</span><i><svg class="i i--fill"><use href="#i-spark"/></svg></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= ESTUDIO ================= -->
+        <section class="studio section" id="estudio">
+          <div class="wrap">
+            <div class="studio__intro">
+              <span class="eyebrow mono" data-scramble>[01] — Estudio</span>
+              <p class="manifesto" id="manifesto">Con una sólida trayectoria en arquitectura comercial, diseñamos espacios que traducen la identidad de cada marca y generan <em>conexión real.</em></p>
+              <div class="studio__meta" data-reveal>
+                <p>Cada proyecto nace de escuchar tus necesidades para crear espacios que conectan y potencian la identidad de tu marca en eventos y ferias.</p>
+                <ul class="offices mono">
+                  <li><span class="t-acc">BA</span> Gavilán 1924 — Buenos Aires</li>
+                  <li><span class="t-acc">L–V</span> 9 a 18 h</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="studio__media" id="studio-media">
+              <img src="assets/img/s/taller.webp" alt="Planos de un stand, muestras de materiales y cinta métrica sobre la mesa de diseño" loading="lazy" decoding="async">
+              <figcaption class="mono"><i class="rec"></i>Del plano al espacio</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- ================= SERVICIOS (tarjetas apiladas) ================= -->
+        <section class="services section" id="servicios">
+          <div class="wrap">
+            <div class="sec-head sec-head--split">
+              <div>
+                <span class="eyebrow mono" data-scramble>[02] — Servicios</span>
+                <h2 class="h2" data-split>Stands y experiencias <em>a medida</em></h2>
+              </div>
+              <p class="lead" data-reveal>Diseñamos espacios pensados a medida, acompañando cada proyecto de principio a fin. Nos ocupamos de todo el proceso para que vos puedas enfocarte en lo que realmente importa.</p>
+            </div>
+
+            <div class="cards-stack" id="cards-stack">
+              <article class="scard">
+                <div class="bezel scard__shell">
+                  <div class="bezel__core scard__core">
+                    <div class="scard__txt">
+                      <span class="scard__num mono">01 / 03 <span class="t-dim">— /stand-a-medida</span></span>
+                      <h3 class="scard__title">Stand <em>a medida</em></h3>
+                      <p>Creamos stands y experiencias a medida que reflejan tu marca. Desde el concepto hasta el montaje, acompañamos cada paso para que tu stand sea una extensión auténtica de tu marca.</p>
+                      <ul class="tags"><li>Ferias</li><li>Exposiciones</li><li>Llave en mano</li></ul>
+                      <a href="#contacto" class="link-arrow" data-scroll-link data-motivo="Stand a medida">Quiero mi stand <svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                    </div>
+                    <div class="scard__media">
+                      <img src="assets/img/s/integral.webp" alt="Stand a medida diseñado por Understand Studio" decoding="async">
+                      <span class="scard__tag mono">01 · stand</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="scard">
+                <div class="bezel scard__shell">
+                  <div class="bezel__core scard__core">
+                    <div class="scard__txt">
+                      <span class="scard__num mono">02 / 03 <span class="t-dim">— /eventos-unicos</span></span>
+                      <h3 class="scard__title">Eventos <em>únicos</em></h3>
+                      <p>Eventos pensados para conectar tu marca con sus futuros clientes. Pensamos la estrategia, diseñamos la experiencia y ejecutamos cada detalle para que tu evento llegue a quienes querés llegar.</p>
+                      <ul class="tags"><li>Estrategia</li><li>Experiencia</li><li>Ejecución</li></ul>
+                      <a href="#contacto" class="link-arrow" data-scroll-link data-motivo="Eventos únicos">Planear un evento <svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                    </div>
+                    <div class="scard__media">
+                      <img src="assets/img/s/eventos.webp" alt="Espacio para evento diseñado por Understand Studio" decoding="async">
+                      <span class="scard__tag mono">02 · evento</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="scard">
+                <div class="bezel scard__shell">
+                  <div class="bezel__core scard__core">
+                    <div class="scard__txt">
+                      <span class="scard__num mono">03 / 03 <span class="t-dim">— /locales-y-oficinas</span></span>
+                      <h3 class="scard__title">Locales <em>y oficinas</em></h3>
+                      <p>Espacios pensados para reflejar la identidad de tu marca y acompañar su crecimiento. Diseñamos y desarrollamos locales comerciales y oficinas a medida, cuidando la experiencia, la funcionalidad y cada detalle.</p>
+                      <ul class="tags"><li>Locales comerciales</li><li>Oficinas</li><li>Arquitectura comercial</li></ul>
+                      <a href="#contacto" class="link-arrow" data-scroll-link data-motivo="Locales y oficinas">Diseñar mi espacio <svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                    </div>
+                    <div class="scard__media">
+                      <img src="assets/img/s/enfoque.webp" alt="Local comercial diseñado por Understand Studio" decoding="async">
+                      <span class="scard__tag mono">03 · local</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PROYECTOS (scroll horizontal) ================= -->
+        <section class="projects" id="proyectos">
+          <div class="projects__pin">
+            <div class="projects__track" id="projects-track">
+              <div class="projects__intro">
+                <span class="eyebrow mono" data-scramble>[03] — Proyectos</span>
+                <h2 class="h2" data-split>Diseños únicos que reflejan <em>tu imagen</em></h2>
+                <p class="lead" data-reveal>Experiencias a medida en ferias, presentaciones y eventos. Cada stand, una extensión auténtica de la marca.</p>
+                <p class="projects__hint mono" data-reveal><svg class="i"><use href="#i-arrow-r"/></svg> <span class="hint-d">Desplazá para recorrer</span><span class="hint-m">Deslizá para ver más</span></p>
+              </div>
+
+              <div class="projects__rail" id="projects-rail">
+              <div class="pcol">
+                <button class="pcard pcard--wide" type="button" data-name="Opella" data-ev="Evento presentación · 2024"><span class="pcard__img"><img src="assets/img/p/opella.webp" alt="Stand de Opella, evento presentación 2024" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">01</span><span class="pcard__name">Opella</span><span class="pcard__ev mono">Evento presentación · 2024</span></span></button>
+                <button class="pcard pcard--wide" type="button" data-name="CEA" data-ev="Expo Transporte · 2026"><span class="pcard__img"><img src="assets/img/p/cea-transporte.webp" alt="Stand de CEA en Expo Transporte 2026" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">02</span><span class="pcard__name">CEA</span><span class="pcard__ev mono">Expo Transporte · 2026</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Marmicoc" data-ev="Presentes · 2026"><span class="pcard__img"><img src="assets/img/p/marmicoc.webp" alt="Stand de Marmicoc en Presentes 2026" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">03</span><span class="pcard__name">Marmicoc</span><span class="pcard__ev mono">Presentes · 2026</span></span></button>
+              </div>
+              <div class="pcol">
+                <button class="pcard pcard--wide" type="button" data-name="Megevand" data-ev="BATEV · 2026"><span class="pcard__img"><img src="assets/img/p/megevand.webp" alt="Stand de Megevand en BATEV 2026" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">04</span><span class="pcard__name">Megevand</span><span class="pcard__ev mono">BATEV · 2026</span></span></button>
+                <button class="pcard pcard--wide" type="button" data-name="CEA" data-ev="Automechanik · 2026"><span class="pcard__img"><img src="assets/img/p/cea-automechanik.webp" alt="Stand de CEA en Automechanik 2026" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">05</span><span class="pcard__name">CEA</span><span class="pcard__ev mono">Automechanik · 2026</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Alfajores Jorgito" data-ev="Expo Golosinas · 2026"><span class="pcard__img"><img src="assets/img/p/jorgito.webp" alt="Stand de Alfajores Jorgito en Expo Golosinas 2026" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">06</span><span class="pcard__name">Alfajores Jorgito</span><span class="pcard__ev mono">Expo Golosinas · 2026</span></span></button>
+              </div>
+              <div class="pcol">
+                <button class="pcard pcard--wide" type="button" data-name="Herralum" data-ev="BATEV · 2026"><span class="pcard__img"><img src="assets/img/p/herralum.webp" alt="Stand de Herralum en BATEV 2026" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">07</span><span class="pcard__name">Herralum</span><span class="pcard__ev mono">BATEV · 2026</span></span></button>
+                <button class="pcard pcard--wide" type="button" data-name="Shiden" data-ev="AGS · 2025"><span class="pcard__img"><img src="assets/img/p/shiden.webp" alt="Stand de Shiden en AGS 2025" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">08</span><span class="pcard__name">Shiden</span><span class="pcard__ev mono">AGS · 2025</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Calier" data-ev="Avícola · 2024"><span class="pcard__img"><img src="assets/img/p/calier.webp" alt="Stand de Calier en Avícola 2024" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">09</span><span class="pcard__name">Calier</span><span class="pcard__ev mono">Avícola · 2024</span></span></button>
+              </div>
+              <div class="pcol">
+                <button class="pcard pcard--wide" type="button" data-name="Etilfarma" data-ev="ETIF · 2019"><span class="pcard__img"><img src="assets/img/p/etilfarma.webp" alt="Stand de Etilfarma en ETIF 2019" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">10</span><span class="pcard__name">Etilfarma</span><span class="pcard__ev mono">ETIF · 2019</span></span></button>
+                <button class="pcard pcard--wide" type="button" data-name="Gotter" data-ev="FIMAQH · 2023"><span class="pcard__img"><img src="assets/img/p/gotter.webp" alt="Stand de Gotter en FIMAQH 2023" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">11</span><span class="pcard__name">Gotter</span><span class="pcard__ev mono">FIMAQH · 2023</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Stock de Carnes" data-ev="Hotelga · 2025"><span class="pcard__img"><img src="assets/img/p/stock-de-carnes.webp" alt="Stand de Stock de Carnes en Hotelga 2025" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">12</span><span class="pcard__name">Stock de Carnes</span><span class="pcard__ev mono">Hotelga · 2025</span></span></button>
+              </div>
+              <div class="pcol">
+                <button class="pcard pcard--wide" type="button" data-name="Carol" data-ev="Presentes · 2024"><span class="pcard__img"><img src="assets/img/p/carol.webp" alt="Stand de Carol en Presentes 2024" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">13</span><span class="pcard__name">Carol</span><span class="pcard__ev mono">Presentes · 2024</span></span></button>
+                <button class="pcard pcard--wide" type="button" data-name="Antequera" data-ev="Hotelga · 2019"><span class="pcard__img"><img src="assets/img/p/antequera.webp" alt="Stand de Antequera en Hotelga 2019" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">14</span><span class="pcard__name">Antequera</span><span class="pcard__ev mono">Hotelga · 2019</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Kinetical" data-ev="Expodent · 2023"><span class="pcard__img"><img src="assets/img/p/kinetical.webp" alt="Stand de Kinetical en Expodent 2023" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">15</span><span class="pcard__name">Kinetical</span><span class="pcard__ev mono">Expodent · 2023</span></span></button>
+              </div>
+              <div class="pcol">
+                <button class="pcard pcard--wide" type="button" data-name="Pauna" data-ev="FITHEP · 2024"><span class="pcard__img"><img src="assets/img/p/pauna.webp" alt="Stand de Pauna en FITHEP 2024" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">16</span><span class="pcard__name">Pauna</span><span class="pcard__ev mono">FITHEP · 2024</span></span></button>
+                <button class="pcard pcard--wide" type="button" data-name="INYM" data-ev="Ganadera · 2018"><span class="pcard__img"><img src="assets/img/p/inym.webp" alt="Stand de INYM en Ganadera 2018" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">17</span><span class="pcard__name">INYM</span><span class="pcard__ev mono">Ganadera · 2018</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Leistung" data-ev="Expo Medical · 2023"><span class="pcard__img"><img src="assets/img/p/leistung.webp" alt="Stand de Leistung en Expo Medical 2023" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">18</span><span class="pcard__name">Leistung</span><span class="pcard__ev mono">Expo Medical · 2023</span></span></button>
+              </div>
+              <div class="pcol pcol--tall">
+                <button class="pcard pcard--tall" type="button" data-name="Unical" data-ev="Exposing · 2023"><span class="pcard__img"><img src="assets/img/p/unical.webp" alt="Stand de Unical en Exposing 2023" loading="lazy" decoding="async"></span><span class="pcard__cap"><span class="pcard__num mono">19</span><span class="pcard__name">Unical</span><span class="pcard__ev mono">Exposing · 2023</span></span></button>
+              </div>
+
+              </div>
+
+              <div class="projects__outro">
+                <img class="projects__outro-img" src="assets/img/s/predio.webp" alt="Predio vacío marcado con cinta en un pabellón de feria" decoding="async">
+                <p class="mono">Tu marca, acá</p>
+                <p class="projects__outro-txt">¿El próximo stand <em>es el tuyo?</em></p>
+                <a href="#contacto" class="btn btn--primary magnetic" data-scroll-link data-motivo="Stand a medida">
+                  <span class="btn__label">Hablemos de tu proyecto</span>
+                  <span class="btn__icon"><svg class="i"><use href="#i-arrow-ur"/></svg><svg class="i i--next"><use href="#i-arrow-ur"/></svg></span>
+                </a>
+              </div>
+            </div>
+            <div class="projects__progress wrap" aria-hidden="true"><span class="mono" id="pj-count">01</span><div class="projects__bar"><span id="pj-bar"></span></div><span class="mono t-dim">19</span></div>
+          </div>
+        </section>
+
+        <!-- ================= PROCESO (stand que se arma) ================= -->
+        <section class="process section" id="proceso">
+          <div class="wrap">
+            <div class="sec-head sec-head--split">
+              <div>
+                <span class="eyebrow mono" data-scramble>[04] — Llave en mano</span>
+                <h2 class="h2" data-split>Del plano <em>al montaje</em></h2>
+              </div>
+              <p class="lead" data-reveal>Ofrecemos un servicio integral llave en mano: diseño, desarrollo, producción y montaje. Desplazá y mirá cómo se arma un stand.</p>
+            </div>
+
+            <div class="build" id="build">
+              <div class="build__visual" id="build-visual">
+                <div class="bezel build__shell">
+                  <div class="bezel__core build__core">
+                    <div class="build__bar mono">
+                      <span><i class="rec"></i>stand_tu-marca.dwg</span>
+                      <span class="t-dim build__scale">esc 1:50</span>
+                    </div>
+                    <svg class="iso" id="iso" viewBox="0 0 560 440" role="img" aria-label="Un stand que se arma en cuatro etapas"></svg>
+                    <div class="build__phase mono">
+                      <span>Fase <b id="phase-num">01</b><span class="t-dim">/04</span></span>
+                      <span class="build__phase-name" id="phase-name">Diseño</span>
+                    </div>
+                    <div class="build__meter"><span id="build-meter"></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="steps-wrap">
+                <span class="steps__rail" aria-hidden="true"><span id="steps-fill"></span></span>
+                <ol class="steps" id="steps">
+                  <li class="step"><span class="step__dot"></span><span class="step__num mono">01</span><div><h3>Diseño</h3><p>Creemos que un buen diseño empieza por escuchar. Comprendemos tu marca y la traducimos en un espacio.</p></div></li>
+                  <li class="step"><span class="step__dot"></span><span class="step__num mono">02</span><div><h3>Desarrollo</h3><p>Desarrollamos el proyecto a medida, cuidando la experiencia, la funcionalidad y cada detalle.</p></div></li>
+                  <li class="step"><span class="step__dot"></span><span class="step__num mono">03</span><div><h3>Producción</h3><p>Producimos cada pieza con un enfoque integral, cuidando cada etapa del proyecto.</p></div></li>
+                  <li class="step"><span class="step__dot"></span><span class="step__num mono">04</span><div><h3>Montaje</h3><p>Llegamos a la feria y lo dejamos listo, con la tranquilidad de que cada detalle está cuidado.</p></div></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= ENFOQUE ================= -->
+        <section class="focus section" id="enfoque">
+          <div class="wrap">
+            <span class="eyebrow mono" data-scramble>[05] — Nuestro enfoque</span>
+            <p class="statement__text" id="statement">Un buen diseño empieza por <span class="hl">escuchar.</span></p>
+            <div class="statement__cols">
+              <p data-reveal>Nuestro enfoque se basa en comprender a cada cliente para crear soluciones reales y a medida.</p>
+              <p data-reveal>Trabajamos con un enfoque integral que combina estrategia, diseño y ejecución, cuidando cada etapa del proyecto.</p>
+            </div>
+
+            <div class="bento" id="bento">
+              <div class="tile tile--photo">
+                <div class="tile__core">
+                  <img class="tile__photo" src="assets/img/s/medida.webp" alt="Stand con exhibición de producto" decoding="async">
+                  <div class="tile__head"><span class="tag mono">Integral</span></div>
+                  <div class="tile__body">
+                    <h3 class="tile__title">Estrategia, diseño <em>y ejecución</em></h3>
+                    <p>Un solo equipo de principio a fin.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tile tile--a">
+                <div class="tile__core">
+                  <div class="tile__head"><span class="tag mono">01</span><span class="tile__arrow"><svg class="i"><use href="#i-arrow-ur"/></svg></span></div>
+                  <div class="vis-target" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="88"/><circle cx="100" cy="100" r="64"/><circle cx="100" cy="100" r="40"/><circle class="fill" cx="100" cy="100" r="14"/><path d="M100 0v36M100 164v36M0 100h36M164 100h36"/></svg></div>
+                  <div class="tile__body"><h3 class="tile__title">Estrategia</h3><p>Pensamos cómo conectar tu marca con sus futuros clientes.</p></div>
+                </div>
+              </div>
+              <div class="tile tile--b">
+                <div class="tile__core">
+                  <div class="tile__head"><span class="tag mono">02</span><span class="tile__arrow"><svg class="i"><use href="#i-arrow-ur"/></svg></span></div>
+                  <div class="vis-plan" aria-hidden="true">
+                    <svg viewBox="0 0 240 120"><path class="w" d="M20 100V20h200v80"/><path class="w" d="M20 60h56M150 20v34"/><path class="w" d="M96 100V78h70v22"/><path class="d" d="M20 112h200M20 108v8M220 108v8"/><text x="120" y="108">6.00</text><circle class="pen" cx="20" cy="100" r="4"/></svg>
+                  </div>
+                  <div class="tile__body"><h3 class="tile__title">Diseño</h3><p>Espacios que traducen la identidad de cada marca.</p></div>
+                </div>
+              </div>
+              <div class="tile tile--c">
+                <div class="tile__core">
+                  <div class="tile__head"><span class="tag mono">03</span><span class="tile__arrow"><svg class="i"><use href="#i-arrow-ur"/></svg></span></div>
+                  <div class="vis-blocks" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+                  <div class="tile__body"><h3 class="tile__title">Ejecución</h3><p>Ejecutamos cada detalle, de la producción al montaje.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= CTA FINAL ================= -->
+        <section class="finale" aria-label="Hablemos">
+          <div class="finale__glow" aria-hidden="true"></div>
+          <div class="wrap finale__inner">
+            <p class="finale__title" id="finale-title">Hagamos tu proyecto <em>único.</em></p>
+            <p class="finale__sub" data-reveal>Estamos listos para escuchar tu proyecto y crear juntos una experiencia única.</p>
+            <a href="#contacto" class="btn btn--primary btn--lg magnetic" data-scroll-link data-reveal>
+              <span class="btn__label">Contactanos hoy mismo</span>
+              <span class="btn__icon"><svg class="i"><use href="#i-arrow-ur"/></svg><svg class="i i--next"><use href="#i-arrow-ur"/></svg></span>
+            </a>
+          </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <section class="contact section" id="contacto">
+          <div class="wrap contact__grid">
+            <div class="contact__info">
+              <span class="eyebrow mono" data-scramble>[06] — Contacto</span>
+              <h2 class="h2" data-split>Hablemos de tu proyecto y cómo hacerlo <em>único.</em></h2>
+              <p class="lead" data-reveal>Contanos tu idea: la feria, el evento o el espacio que tenés en mente. También podés escribirnos por WhatsApp.</p>
+
+              <ul class="clist" data-reveal-group>
+                <li><a href="https://wa.me/5491164562950" target="_blank" rel="noopener"><span class="clist__ic"><svg class="i"><use href="#i-wa"/></svg></span><div><span class="mono t-dim">WhatsApp</span><p>+54 9 11 6456-2950</p></div></a></li>
+                <li><a href="tel:+5492229511390"><span class="clist__ic"><svg class="i"><use href="#i-phone"/></svg></span><div><span class="mono t-dim">Teléfono</span><p>+54 9 2229 51-1390</p></div></a></li>
+                <li><a href="mailto:hola@understandstudio.com.ar"><span class="clist__ic"><svg class="i"><use href="#i-mail"/></svg></span><div><span class="mono t-dim">Email</span><p>hola@understandstudio.com.ar</p></div></a></li>
+                <li><a href="mailto:marketing@understandstudio.com.ar"><span class="clist__ic"><svg class="i"><use href="#i-mail"/></svg></span><div><span class="mono t-dim">Marketing</span><p>marketing@understandstudio.com.ar</p></div></a></li>
+                <li class="clist__static"><span class="clist__ic"><svg class="i"><use href="#i-pin"/></svg></span><div><span class="mono t-dim">Dónde estamos</span><p>Gavilán 1924 — Buenos Aires, Argentina</p></div></li>
+                <li class="clist__static"><span class="clist__ic"><svg class="i"><use href="#i-clock"/></svg></span><div><span class="mono t-dim">Horario</span><p>Lunes a viernes, 9 a 18 h</p></div></li>
+              </ul>
+
+              <div class="socials" data-reveal>
+                <a href="https://www.instagram.com/understandstudio/" target="_blank" rel="noopener" aria-label="Instagram" class="magnetic"><svg class="i"><use href="#i-ig"/></svg></a>
+                <a href="https://www.facebook.com/UnderStandStudio/" target="_blank" rel="noopener" aria-label="Facebook" class="magnetic"><svg class="i"><use href="#i-fb"/></svg></a>
+                <a href="https://www.linkedin.com/company/understand/" target="_blank" rel="noopener" aria-label="LinkedIn" class="magnetic"><svg class="i"><use href="#i-in"/></svg></a>
+                <a href="https://wa.me/5491164562950" target="_blank" rel="noopener" aria-label="WhatsApp" class="magnetic"><svg class="i"><use href="#i-wa"/></svg></a>
+              </div>
+            </div>
+
+            <div class="bezel form-shell" data-reveal>
+              <form class="bezel__core form" id="contact-form" novalidate>
+                <div class="form__head mono"><span><i class="live"></i> nuevo_proyecto.brief</span><span class="t-dim">* obligatorio</span></div>
+                <div class="form__grid">
+                  <label class="field"><span class="field__lbl mono">Nombre completo</span><input name="nombre" type="text" autocomplete="name" placeholder="Escribí tu nombre"></label>
+                  <label class="field"><span class="field__lbl mono">Correo electrónico *</span><input name="email" type="email" autocomplete="email" placeholder="Tu email" required></label>
+                  <label class="field field--full"><span class="field__lbl mono">Tipo de proyecto</span>
+                    <select name="motivo" id="motivo">
+                      <option value="" selected>Seleccioná una opción</option>
+                      <option value="Stand a medida">Stand a medida</option>
+                      <option value="Eventos únicos">Eventos únicos</option>
+                      <option value="Locales y oficinas">Locales y oficinas</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </label>
+                  <label class="field field--full"><span class="field__lbl mono">Mensaje *</span><textarea name="mensaje" rows="5" placeholder="Contanos tu idea" required></textarea></label>
+                </div>
+                <div class="form__foot">
+                  <p class="form__status mono" id="form-status" role="status" aria-live="polite"></p>
+                  <button type="submit" class="btn btn--primary magnetic">
+                    <span class="btn__label">Enviar consulta</span>
+                    <span class="btn__icon"><svg class="i"><use href="#i-arrow-ur"/></svg><svg class="i i--next"><use href="#i-arrow-ur"/></svg></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="footer">
+        <div class="wrap">
+          <div class="footer__top">
+            <div class="footer__col">
+              <p class="mono t-dim">Secciones</p>
+              <a href="#estudio" data-scroll-link>Estudio</a><a href="#servicios" data-scroll-link>Servicios</a><a href="#proyectos" data-scroll-link>Proyectos</a><a href="#proceso" data-scroll-link>Proceso</a><a href="#contacto" data-scroll-link>Contacto</a>
+            </div>
+            <div class="footer__col">
+              <p class="mono t-dim">Redes</p>
+              <a href="https://www.instagram.com/understandstudio/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.facebook.com/UnderStandStudio/" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://www.linkedin.com/company/understand/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="footer__col">
+              <p class="mono t-dim">Contacto</p>
+              <a href="mailto:hola@understandstudio.com.ar">hola@understandstudio.com.ar</a>
+              <a href="tel:+5492229511390">+54 9 2229 51-1390</a>
+              <a href="https://wa.me/5491164562950" target="_blank" rel="noopener">WhatsApp +54 9 11 6456-2950</a>
+              <span>Gavilán 1924 — Buenos Aires, Argentina</span>
+            </div>
+            <div class="footer__col footer__end">
+              <span class="seal" aria-hidden="true">
+                <svg viewBox="0 0 200 200">
+                  <defs><path id="seal-path" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+                  <g class="seal__rot"><text><textPath href="#seal-path" textLength="484" lengthAdjust="spacing">LLAVE EN MANO · BUENOS AIRES · ARGENTINA · </textPath></text></g>
+                  <circle class="seal__dot" cx="100" cy="100" r="16"/>
+                </svg>
+              </span>
+              <button class="to-top magnetic" type="button" id="to-top" aria-label="Volver arriba"><svg class="i"><use href="#i-arrow-d"/></svg></button>
+            </div>
+          </div>
+          <div class="footer__word" id="footer-word" aria-hidden="true">
+            <span class="logo logo--footer"><span class="logo__mark"></span><span class="logo__dot"></span></span>
+          </div>
+          <div class="footer__bottom mono">
+            <span>© <span id="year">2026</span> Understand Studio. Todos los derechos reservados.</span>
+            <span class="t-dim">Buenos Aires — Argentina</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollSmoother.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrambleTextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
