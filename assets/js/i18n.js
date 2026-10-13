@@ -34,7 +34,7 @@
     "Ferias y eventos": "Fairs & events",
     "Hotelga · BATEV · Expo Golosinas y más": "Hotelga · BATEV · Expo Golosinas and more",
     "Trayectoria": "Since",
-    "Desde INYM en Ganadera 2018": "From INYM at Ganadera 2018",
+    "Desde INYM en Ganadera 2019": "From INYM at Ganadera 2019",
     "Llave en mano": "Turnkey",
     "Diseño · Desarrollo · Producción · Montaje": "Design · Development · Production · Build",
     "Marcas y ferias": "Brands & fairs",
