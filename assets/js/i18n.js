@@ -154,6 +154,7 @@
     "Evento de presentación de Opella diseñado por Understand Studio": "Opella product launch event designed by Understand Studio",
     "Local comercial diseñado por Understand Studio": "Retail space designed by Understand Studio",
     "Stand de Opella, evento presentación 2024": "Opella stand, product launch 2024",
+    "Stand de Editorial Dunken, 2019": "Editorial Dunken stand, 2019",
     "Predio vacío marcado con cinta en un pabellón de feria": "Empty plot marked with tape in an exhibition hall",
     "Predio vacío marcado con cinta naranja en un pabellón de feria": "Empty plot marked with tape in an exhibition hall",
     "Stand con exhibición de producto": "Stand with product display",
