@@ -40,13 +40,16 @@
       const x = r.left + r.width / 2;
       const y = r.top + r.height / 2;
       const R = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
-      const vt = document.startViewTransition(() => apply(next));
-      vt.ready.then(() => {
-        html.animate(
-          { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${R}px at ${x}px ${y}px)`] },
-          { duration: 1000, easing: "cubic-bezier(0.76, 0, 0.24, 1)", pseudoElement: "::view-transition-new(root)" }
-        );
-      });
+      // Si el navegador no soporta la transición circular, el cambio es instantáneo
+      try {
+        const vt = document.startViewTransition(() => apply(next));
+        vt.ready.then(() => {
+          html.animate(
+            { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${R}px at ${x}px ${y}px)`] },
+            { duration: 1000, easing: "cubic-bezier(0.76, 0, 0.24, 1)", pseudoElement: "::view-transition-new(root)" }
+          );
+        }).catch(() => {});
+      } catch (e) { apply(next); }
     });
   })();
 
@@ -835,7 +838,22 @@
       ScrollTrigger.create({ trigger: "#steps", start: "top 62%", end: "bottom 75%", scrub: 0.6, animation: tl });
     });
     mm.add("(max-width: 960px)", () => {
-      ScrollTrigger.create({ trigger: "#build-visual", start: "top 85%", end: "bottom 25%", scrub: 0.6, animation: tl });
+      // Mobile: el recuadro se frena debajo del menú, se arma ahí y las etapas
+      // suben y se esconden detrás. Cuando pasó la última, se suelta.
+      const vis = $("#build-visual");
+      const build = $("#build");
+      const pill = $(".nav__pill");
+      // borde inferior del menú (16px de margen + alto de la píldora) + aire
+      const top = () => 16 + pill.offsetHeight + 20;
+      ScrollTrigger.create({
+        trigger: vis,
+        start: () => `top ${top()}px`,
+        end: () => "+=" + Math.max(0, build.offsetHeight - vis.offsetHeight),
+        pin: true, pinSpacing: false, scrub: 0.6, animation: tl, invalidateOnRefresh: true,
+        // la tapa de fondo sigue puesta después de soltarse, así las etapas no reaparecen arriba
+        onUpdate: (self) => vis.classList.toggle("is-pinned", self.progress > 0.001),
+        onRefresh: (self) => vis.classList.toggle("is-pinned", self.progress > 0.001),
+      });
     });
 
     gsap.to("#steps-fill", {
