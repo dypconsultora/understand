@@ -434,7 +434,6 @@ html.i18n-pending body { visibility: hidden; }
   visibility: hidden;
   clip-path: circle(0% at calc(100% - 44px) 44px);
 }
-.menu .eyebrow { align-self: flex-start; }
 .menu__inner { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 110px 24px 40px; gap: 32px; }
 .menu__list li { overflow: hidden; border-bottom: 1px solid var(--line); }
 .menu__list a { display: flex; align-items: baseline; gap: 18px; padding: 12px 0; }

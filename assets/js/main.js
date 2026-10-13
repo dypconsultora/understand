@@ -1038,7 +1038,7 @@
         .set(m, { visibility: "visible" })
         .fromTo(m, { clipPath: `circle(0px at ${x}px ${y}px)` }, { clipPath: `circle(${Math.hypot(window.innerWidth, window.innerHeight) * 1.05}px at ${x}px ${y}px)`, duration: 0.9, ease: "expo.inOut" })
         .fromTo(".menu__label", { yPercent: 110 }, { yPercent: 0, duration: 1, stagger: 0.06, ease: "expo.out" }, 0.3)
-        .fromTo([".menu .eyebrow", ".menu__list .mono", ".menu__foot"], { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.03, ease: "expo.out" }, 0.4);
+        .fromTo([".menu__list .mono", ".menu__lang", ".menu__foot"], { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.03, ease: "expo.out" }, 0.4);
     };
     const setOpen = (v, after) => {
       open = v;
