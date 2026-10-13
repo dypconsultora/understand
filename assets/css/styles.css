@@ -1009,6 +1009,7 @@ html.i18n-pending body { visibility: hidden; }
   .step { min-height: 30vh; }
   /* Mobile: el recuadro queda fijo y las etapas pasan por detrás */
   .build__visual { position: relative; z-index: 2; }
+  .build__visual.is-sticky { position: sticky; top: var(--stick, 102px); }
   .build__visual::before {
     content: ""; position: absolute; z-index: -1;
     left: calc(var(--gutter) * -1); right: calc(var(--gutter) * -1); top: -140px; bottom: 30%;

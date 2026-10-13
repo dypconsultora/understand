@@ -845,24 +845,50 @@
       const pill = $(".nav__pill");
       // borde inferior del menú (16px de margen + alto de la píldora) + aire
       const top = () => 16 + pill.offsetHeight + 20;
-      ScrollTrigger.create({
-        trigger: vis,
-        start: () => `top ${top()}px`,
-        end: () => "+=" + Math.max(0, build.offsetHeight - vis.offsetHeight),
-        pin: true, pinSpacing: false, scrub: 0.6, animation: tl, invalidateOnRefresh: true,
-        // la tapa de fondo sigue puesta después de soltarse, así las etapas no reaparecen arriba
-        onUpdate: (self) => vis.classList.toggle("is-pinned", self.progress > 0.001),
-        onRefresh: (self) => vis.classList.toggle("is-pinned", self.progress > 0.001),
-      });
+      const dist = () => Math.max(0, build.offsetHeight - vis.offsetHeight);
+      const mark = (self) => vis.classList.toggle("is-pinned", self.progress > 0.001);
+      // En touch el scroll es nativo: se fija con CSS (position: sticky), que no tiembla.
+      // Con scroll suavizado (ventana angosta en una compu) se fija con ScrollTrigger.
+      const native = !smoother || smoother.smooth() === 0;
+      if (native) {
+        vis.style.setProperty("--stick", top() + "px");
+        vis.classList.add("is-sticky");
+        ScrollTrigger.create({
+          trigger: build,
+          start: () => `top ${top()}px`,
+          end: () => "+=" + dist(),
+          scrub: 0.4, animation: tl, invalidateOnRefresh: true,
+          onUpdate: mark,
+          onRefresh: (self) => { vis.style.setProperty("--stick", top() + "px"); mark(self); },
+        });
+      } else {
+        ScrollTrigger.create({
+          trigger: vis,
+          start: () => `top ${top()}px`,
+          end: () => "+=" + dist(),
+          pin: true, pinSpacing: false, scrub: 0.6, animation: tl, invalidateOnRefresh: true,
+          onUpdate: mark, onRefresh: mark,
+        });
+      }
+      return () => { vis.classList.remove("is-sticky", "is-pinned"); vis.style.removeProperty("--stick"); };
     });
 
+    // En mobile el recuadro fijo tapa la mitad de arriba: las etapas y la línea
+    // se encienden más abajo, donde se ven.
+    // La línea avanza hasta la mitad del espacio libre debajo del recuadro, así
+    // "Diseño" ya está pintado cuando el recuadro se traba y el trazo se ve crecer.
+    const at = () => {
+      if (window.innerWidth > 960) return "62%";
+      const cardBottom = 16 + $(".nav__pill").offsetHeight + 20 + $("#build-visual").offsetHeight;
+      return Math.round(cardBottom + (window.innerHeight - cardBottom) * 0.5) + "px";
+    };
     gsap.to("#steps-fill", {
       scaleY: 1, ease: "none",
-      scrollTrigger: { trigger: "#steps", start: "top 62%", end: "bottom 62%", scrub: true },
+      scrollTrigger: { trigger: "#steps", start: () => "top " + at(), end: () => "bottom " + at(), scrub: true, invalidateOnRefresh: true },
     });
     $$(".step").forEach((s) => {
       ScrollTrigger.create({
-        trigger: s, start: "top 62%",
+        trigger: s, start: () => "top " + at(),
         onEnter: () => s.classList.add("is-active"),
         onLeaveBack: () => s.classList.remove("is-active"),
       });
