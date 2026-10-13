@@ -151,7 +151,7 @@
     "Cerrar": "Close",
     "Planos de un stand, muestras de materiales y cinta métrica sobre la mesa de diseño": "Stand blueprints, material samples and a measuring tape on the design table",
     "Stand a medida diseñado por Understand Studio": "Custom stand designed by Understand Studio",
-    "Espacio para evento diseñado por Understand Studio": "Event space designed by Understand Studio",
+    "Evento de presentación de Opella diseñado por Understand Studio": "Opella product launch event designed by Understand Studio",
     "Local comercial diseñado por Understand Studio": "Retail space designed by Understand Studio",
     "Stand de Opella, evento presentación 2024": "Opella stand, product launch 2024",
     "Predio vacío marcado con cinta en un pabellón de feria": "Empty plot marked with tape in an exhibition hall",
