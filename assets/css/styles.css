@@ -386,7 +386,7 @@ html.js:not(.is-ready) .fab { opacity: 0; visibility: hidden; }
 .nav__progress { position: absolute; left: 22px; right: 22px; bottom: 0; height: 1px; overflow: hidden; }
 .nav__progress span { display: block; height: 100%; background: linear-gradient(90deg, transparent, var(--brand)); transform-origin: left; transform: scaleX(0); }
 
-.nav__burger { display: none; position: relative; width: 48px; height: 48px; border-radius: 50%; background: rgba(var(--ink-rgb), 0.06); }
+.nav__burger { display: none; flex: none; position: relative; width: 48px; height: 48px; border-radius: 50%; background: rgba(var(--ink-rgb), 0.06); }
 .nav__burger span {
   position: absolute; left: 15px; right: 15px; height: 1.5px; background: var(--ink); border-radius: 2px;
   transition: transform 0.6s var(--ease), top 0.6s var(--ease);
@@ -480,11 +480,11 @@ html.i18n-pending body { visibility: hidden; }
 }
 .hero__inner { position: relative; }
 .hero__title {
-  font-size: clamp(60px, 11.4vw, 196px);
+  font-size: clamp(60px, 11.4vw, 166px);
   line-height: 0.9; letter-spacing: -0.06em; font-weight: 500;
 }
 .hero__title em { font-size: 1.06em; letter-spacing: -0.025em; padding-right: 0.02em; white-space: nowrap; }
-:root[lang="en"] .hero__title { font-size: clamp(54px, 10.4vw, 178px); }
+:root[lang="en"] .hero__title { font-size: clamp(54px, 10.4vw, 151px); }
 /* el punto del logo cierra el título */
 .hero__title em::after {
   content: ""; display: inline-block;
@@ -499,7 +499,7 @@ html.i18n-pending body { visibility: hidden; }
 }
 .hero__sub { font-size: clamp(17px, 1.35vw, 20px); color: var(--ink-2); max-width: 44ch; }
 .hero__sub b { color: var(--ink); font-weight: 500; }
-.hero__ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero__ctas { display: flex; gap: 10px; flex-wrap: wrap; flex: none; }
 
 /* Escenario de proyectos */
 .hero__stage { margin-top: clamp(64px, 9vw, 120px); perspective: 1800px; }
@@ -730,7 +730,7 @@ html.i18n-pending body { visibility: hidden; }
   mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
 }
-.build__bar, .build__phase { position: relative; display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.08em; color: var(--ink-2); padding: 4px 6px; }
+.build__bar, .build__phase { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 0.08em; color: var(--ink-2); padding: 4px 6px; }
 .build__phase { text-transform: uppercase; }
 .build__phase b { font-weight: 500; color: var(--accent); }
 .build__phase-name { font-family: var(--f-sans); text-transform: none; letter-spacing: -0.03em; font-size: 22px; font-weight: 500; color: var(--ink); }
@@ -1053,6 +1053,14 @@ html.i18n-pending body { visibility: hidden; }
   .marquee--sm .marquee__inner span:not(.mdot) { font-size: 28px; }
   .logo--footer { width: 90vw; }
   .lightbox__img { max-height: calc(100vh - 220px); max-height: calc(100dvh - 220px); }
+}
+
+/* Celulares muy angostos */
+@media (max-width: 359px) {
+  .nav__pill { padding-left: 16px; }
+  .nav__logo { margin-right: auto; }
+  .nav__logo .logo { width: 124px; }
+  .build__scale { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
