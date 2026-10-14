@@ -119,7 +119,8 @@
     "Secciones": "Sections",
     "Redes": "Social",
     "Understand Studio. Todos los derechos reservados.": "Understand Studio. All rights reserved.",
-    "Gavilán 1924 — Buenos Aires, Argentina": "Gavilán 1924 — Buenos Aires, Argentina"
+    "Gavilán 1924 — Buenos Aires, Argentina": "Gavilán 1924 — Buenos Aires, Argentina",
+    "Understand Studio es un estudio de diseño y producción de stands para ferias y exposiciones, eventos, locales comerciales y oficinas a medida, con servicio integral llave en mano en Buenos Aires, Argentina.": "Understand Studio is a design and production studio for custom exhibition stands, events, retail stores and offices, offering a full turnkey service in Buenos Aires, Argentina."
   };
 
   /* Títulos donde cambia el orden de las palabras: se reemplaza el HTML completo */
@@ -168,10 +169,10 @@
   };
 
   var META = {
-    title: "Understand Studio — Exhibition stand design & production",
-    description: "Design and production of custom exhibition stands, events, retail stores and offices. Full turnkey service: design, development, production and build. Buenos Aires, Argentina.",
+    title: "Understand Studio — Exhibition stand design & production in Buenos Aires",
+    description: "Design and production studio for custom exhibition stands, events, retail stores and offices. Full turnkey service: design, development, production and build. Buenos Aires, Argentina.",
     ogTitle: "Understand Studio — Design that connects",
-    ogDescription: "We design unique experiences that reflect your identity. Custom stands, events, retail stores and offices."
+    ogDescription: "Design and production of custom stands for trade fairs, events, retail stores and offices. Turnkey, in Buenos Aires."
   };
 
   var norm = function (s) { return s.replace(/\s+/g, " ").trim(); };
@@ -220,6 +221,13 @@
     set('meta[name="description"]', META.description);
     set('meta[property="og:title"]', META.ogTitle);
     set('meta[property="og:description"]', META.ogDescription);
+    set('meta[name="twitter:title"]', META.ogTitle);
+    set('meta[name="twitter:description"]', META.ogDescription);
+    set('meta[property="og:locale"]', "en_US");
+    set('meta[property="og:locale:alternate"]', "es_AR");
+    set('meta[property="og:url"]', "https://understandstudio.com.ar/?lang=en");
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.setAttribute("href", "https://understandstudio.com.ar/?lang=en");
   }
 
   if (lang === "en") translate();
@@ -232,7 +240,14 @@
       localStorage.setItem("understand-lang", next);
       sessionStorage.setItem("understand-restore-y", String(window.scrollY || 0));
     } catch (e) { /* almacenamiento no disponible */ }
-    window.location.reload();
+    // Si la URL trae ?lang=, se actualiza para que no pise la elección
+    if (/[?&]lang=/.test(window.location.search)) {
+      var url = new URL(window.location.href);
+      if (next === "es") url.searchParams.delete("lang"); else url.searchParams.set("lang", next);
+      window.location.replace(url.toString());
+    } else {
+      window.location.reload();
+    }
   }
   document.querySelectorAll("[data-lang]").forEach(function (b) {
     var on = b.getAttribute("data-lang") === lang;

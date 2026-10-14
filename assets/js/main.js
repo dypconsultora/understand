@@ -1207,7 +1207,9 @@
     }
     const h = window.location.hash;
     if (!h || h === "#top" || h === "#main") return;
-    const el = $(h);
+    // Solo anclas simples (#contacto); cualquier otra cosa se ignora
+    if (!/^#[A-Za-z][\w-]*$/.test(h)) return;
+    const el = document.getElementById(h.slice(1));
     if (!el) return;
     ScrollTrigger.refresh();
     if (smoother) smoother.scrollTo(el, false, el.dataset.scrollPos || "top top");

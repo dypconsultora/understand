@@ -1,0 +1,41 @@
+# Understand Studio — https://understandstudio.com.ar
+# Todo el sitio es público: buscadores y asistentes de IA pueden leerlo e indexarlo.
+
+User-agent: *
+Allow: /
+
+# Buscadores de IA (ChatGPT, Claude, Perplexity, Gemini, Apple, Copilot)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://understandstudio.com.ar/sitemap.xml
